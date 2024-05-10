@@ -10,7 +10,9 @@ ENV TZ="Asia/Tokyo" \
     libxml2-dev \
     zip \
     unzip \
-    && docker-php-ext-install pdo_mysql gd mbstring xml
+    gcc make autoconf \
+    && docker-php-ext-install pdo_mysql gd mbstring xml \
+    && pecl install opentelemetry
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
