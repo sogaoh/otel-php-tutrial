@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": "^8.2", 
+        "slim/slim": "^4",
+        "slim/psr7": "^1"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}

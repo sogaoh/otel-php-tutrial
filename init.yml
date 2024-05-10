@@ -1,0 +1,7 @@
+
+services:
+  composer:
+    image: composer:2
+    volumes:
+      - ./:/work
+    working_dir: /work
