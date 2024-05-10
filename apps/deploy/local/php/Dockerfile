@@ -14,10 +14,12 @@ ENV TZ="Asia/Tokyo" \
     && docker-php-ext-install pdo_mysql gd mbstring xml \
     && pecl install opentelemetry
 
+COPY ./deploy/local/php/php.ini $PHP_INI_DIR/conf.d/php.ini
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /workdir
 
-EXPOSE 9000
+EXPOSE 8080
 
 CMD ["php-fpm"]

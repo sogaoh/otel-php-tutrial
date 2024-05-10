@@ -28,6 +28,11 @@ services:
     command: php -S 0.0.0.0:8080 -t public public/index.php
     depends_on:
       - db
+    environment:
+      - OTEL_PHP_AUTOLOAD_ENABLED=true
+      - OTEL_TRACES_EXPORTER=console
+      - OTEL_METRICS_EXPORTER=none
+      - OTEL_LOGS_EXPORTER=none
     ports:
       - 8080:8080
     volumes:
